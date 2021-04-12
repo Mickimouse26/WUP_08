@@ -3,8 +3,8 @@ title: "simpleRegress"
 author: "Michelle Coleman"
 date: "April 11, 2021"
 output:
-    html_document
-       
+    html_document:
+     toc: TRUE
 ---
 
 ```{r setup, include=FALSE}
@@ -40,4 +40,11 @@ predict(simp,newData)
 predict(simp,newData,se.fit=TRUE)
 ```
 ## Surely there is another variable that can better predict LENGTH than NECK. Find one and compare its performance to that of neck by it value of Adjusted-Rsquared (bigger is better).
+
+```{r}
+headwid <- lm(LENGTH~HEADWTH,data=bears)
+plot(LENGTH~HEADWTH,data=bears)
+abline(headwid)
+summary.lm(headwid)
+```
 

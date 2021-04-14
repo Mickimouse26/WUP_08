@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 bears <- read.csv(file="BEARS.csv",header = TRUE)
 ```
-
+# NECK
 ## Model LENGTH ~ NECK  this is an example  
 
 ```{r}
@@ -29,12 +29,20 @@ abline(simp)
 summary.lm(simp)
 ```
 
+
+# HEADWTH
+## Model LENGTH ~ HEADWTH 
+
+
 ```{r}
 simpHW <- lm(LENGTH~HEADWTH,data=bears)
 plot(LENGTH~HEADWTH,data=bears)
 abline(simpHW)
 summary.lm(simpHW)
 ```
+
+# HEADLEN
+## Model LENGTH - HEADLEN
 
 ```{r}
 simpHL <- lm(LENGTH~HEADLEN,data=bears)
@@ -43,6 +51,9 @@ abline(simpHL)
 summary.lm(simpHL)
 ```
 
+# WEIGHT
+## Model LENGTH - WEIGHT
+
 ```{r}
 simpW <- lm(LENGTH~WEIGHT,data=bears)
 plot(LENGTH~WEIGHT,data=bears)
@@ -50,6 +61,8 @@ abline(simpW)
 summary.lm(simpW)
 ```
 
+# CHEST
+## Model LENTGH - CHEST
 
 ```{r}
 simpC <- lm(LENGTH~CHEST,data=bears)
@@ -58,8 +71,13 @@ abline(simpC)
 summary.lm(simpC)
 ```
 
+
 ## now predict the length of a bear who has a neck of 17, 22 and 26
 
+```{r}
+new <- data.frame(HEADLEN=c(17,13,9))
+predict(simpHL, new, se.fit=TRUE)
+```
 
 
 

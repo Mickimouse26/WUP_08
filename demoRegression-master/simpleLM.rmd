@@ -29,6 +29,11 @@ abline(simp)
 summary.lm(simp)
 ```
 
+```{r}
+new <- data.frame(NECK=bears$NECK[c(5,15,23)])
+predict(simp, new, se.fit=TRUE)
+```
+
 
 # HEADWTH
 ## Model LENGTH ~ HEADWTH 
@@ -41,6 +46,11 @@ abline(simpHW)
 summary.lm(simpHW)
 ```
 
+```{r}
+new <- data.frame(HEADWTH=bears$HEADWTH[c(5,15,23)])
+predict(simpHW, new, se.fit=TRUE)
+```
+
 # HEADLEN
 ## Model LENGTH - HEADLEN
 
@@ -49,6 +59,11 @@ simpHL <- lm(LENGTH~HEADLEN,data=bears)
 plot(LENGTH~HEADLEN,data=bears)
 abline(simpHL)
 summary.lm(simpHL)
+```
+
+```{r}
+new <- data.frame(HEADLEN=bears$HEADLEN [c(5, 15, 23)])
+predict(simpHL, new, se.fit=TRUE)
 ```
 
 # WEIGHT
@@ -61,6 +76,11 @@ abline(simpW)
 summary.lm(simpW)
 ```
 
+```{r}
+new <- data.frame(WEIGHT=bears$WEIGHT [c(5, 15, 23)])
+predict(simpW, new, se.fit=TRUE)
+```
+
 # CHEST
 ## Model LENTGH - CHEST
 
@@ -71,12 +91,9 @@ abline(simpC)
 summary.lm(simpC)
 ```
 
-
-## now predict the length of a bear who has a neck of 17, 22 and 26
-
 ```{r}
-new <- data.frame(HEADLEN=c(17,13,9))
-predict(simpHL, new, se.fit=TRUE)
+new <- data.frame(CHEST=bears$CHEST[c(5, 15, 23)])
+predict(simpC, new, se.fit=TRUE)
 ```
 
 
